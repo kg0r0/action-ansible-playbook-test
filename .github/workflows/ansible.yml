@@ -10,8 +10,7 @@ jobs:
       - name: Test Local
         uses: dawidd6/action-ansible-playbook@v2
         with:
-          playbook: main.yml
-          directory: ./test/defaults
-          options: |
-            --inventory hosts  
-            --limit local  
+          playbook: site.yml
+          inventory: |
+            [all]
+            localhost ansible_connection=local
